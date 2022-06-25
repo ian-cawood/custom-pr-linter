@@ -1,6 +1,6 @@
 import test from 'ava'
 
-import * as preset from './preset.js'
+import * as preset from './preset'
 
 const testPrefix = 'modules/lint/preset'
 

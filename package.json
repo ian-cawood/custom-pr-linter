@@ -1,11 +1,11 @@
 {
   "name": "custom-pr-linter",
   "version": "0.0.0",
-  "type": "module",
   "description": "A Custom Github Actions pr linter",
   "main": "index.js",
   "scripts": {
     "build": "esbuild src/index.js --bundle --platform=node --outfile=dist/index.js",
+    "build:ncc": "ncc build src/index.js -o dist",
     "test": "ava"
   },
   "repository": {
@@ -26,6 +26,7 @@
     "@commitlint/lint": "^17.0.0"
   },
   "devDependencies": {
+    "@vercel/ncc": "^0.34.0",
     "ava": "^4.3.0",
     "esbuild": "^0.14.46"
   }
