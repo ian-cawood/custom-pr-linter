@@ -24140,6 +24140,8 @@ async function run() {
       throw new Error(JSON.stringify(result.errors));
     }
   } catch (error) {
+    console.log(error);
+    console.log(import_core.default);
     import_core.default.setFailed(error.message);
   }
 }

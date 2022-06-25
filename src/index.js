@@ -18,6 +18,8 @@ async function run() {
     }
   }
   catch (error) {
+    console.log(error)
+    console.log(core)
     core.setFailed(error.message)
   }
 }
