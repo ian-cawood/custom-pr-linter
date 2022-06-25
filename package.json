@@ -1,11 +1,12 @@
 {
   "name": "custom-pr-linter",
-  "version": "1.0.0",
+  "type": "module",
+  "version": "0.0.0",
   "description": "A Custom Github Actions pr linter",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild index.js --bundle --platform=node --outfile=dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "esbuild src/index.js --bundle --platform=node --outfile=dist/index.js",
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,12 @@
   "homepage": "https://github.com/ian-cawood/custom-pr-linter#readme",
   "dependencies": {
     "@actions/core": "^1.9.0",
-    "@actions/github": "^5.0.3"
+    "@actions/github": "^5.0.3",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@commitlint/lint": "^17.0.0"
   },
   "devDependencies": {
+    "ava": "^4.3.0",
     "esbuild": "^0.14.46"
   }
 }
