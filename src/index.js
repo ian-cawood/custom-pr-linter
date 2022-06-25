@@ -11,7 +11,7 @@ async function run() {
       throw new Error('Payload does not have a pull request')
     }
     
-    console.log(title)
+    console.log(pullRequest.title)
     const result = await preset.conventional(pullRequest.title)
     console.log(result)
 
