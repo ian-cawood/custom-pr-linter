@@ -1,6 +1,7 @@
 {
   "name": "custom-pr-linter",
   "version": "0.0.0",
+  "type": "module",
   "description": "A Custom Github Actions pr linter",
   "main": "index.js",
   "scripts": {

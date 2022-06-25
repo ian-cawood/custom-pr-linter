@@ -24116,16 +24116,16 @@ var require_config_conventional = __commonJS({
 });
 
 // src/index.js
-var core = __toESM(require_core());
-var github = __toESM(require_github());
+var core = __toESM(require_core(), 1);
+var github = __toESM(require_github(), 1);
 
 // src/modules/lint/preset.js
 var preset_exports = {};
 __export(preset_exports, {
   conventional: () => conventional
 });
-var import_lint = __toESM(require_lint2());
-var import_config_conventional = __toESM(require_config_conventional());
+var import_lint = __toESM(require_lint2(), 1);
+var import_config_conventional = __toESM(require_config_conventional(), 1);
 var conventional = (input) => import_lint.default.default(input, import_config_conventional.default.rules);
 
 // src/index.js
