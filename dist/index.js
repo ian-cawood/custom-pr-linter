@@ -41876,7 +41876,7 @@ var config_conventional_default = /*#__PURE__*/__nccwpck_require__.n(config_conv
 
 
 
-const conventional = (input) => lint_default()["default"](input, (config_conventional_default()).rules)
+const conventional = (input) => lint_default()(input, (config_conventional_default()).rules)
 
 
 
