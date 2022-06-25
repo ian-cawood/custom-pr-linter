@@ -1,8 +1,8 @@
-import lint from '@commitlint/lint'
-import conventionalConfig from '@commitlint/config-conventional'
+const lint = require('@commitlint/lint')
+const conventionalConfig = require('@commitlint/config-conventional')
 
-const conventional = (input) => lint(input, conventionalConfig.rules)
+const conventional = (input) => lint.default(input, conventionalConfig.rules)
 
-export {
+module.exports = {
   conventional,
 }

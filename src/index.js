@@ -1,7 +1,7 @@
-import * as core from '@actions/core'
-import * as github from '@actions/github'
+const core = require('@actions/core')
+const github = require('@actions/github')
 
-import { preset } from './modules/lint'
+const { preset } = require('./modules/lint')
 
 async function run() {
   try {

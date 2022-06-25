@@ -1,5 +1,5 @@
-import * as preset from './preset'
+const preset = require('./preset')
 
-export {
+module.exports = {
   preset,
 }

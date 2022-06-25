@@ -1,7 +1,7 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Custom PR Linter'
+description: 'A Pull Request linter that can be customized as needed'
 inputs:
-  who-to-greet:  # id of input
+  title:  # id of input
     description: 'Who to greet'
     required: true
     default: 'World'
