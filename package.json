@@ -4,8 +4,7 @@
   "description": "A Custom Github Actions pr linter",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild src/index.js --bundle --platform=node --outfile=dist/index.js",
-    "build:ncc": "ncc build src/index.js -o dist",
+    "build": "ncc build src/index.js -o dist",
     "test": "ava"
   },
   "repository": {

@@ -11,7 +11,9 @@ async function run() {
       throw new Error('Payload does not have a pull request')
     }
     
+    console.log(title)
     const result = await preset.conventional(pullRequest.title)
+    console.log(result)
 
     if (!result.valid) {
       throw new Error(JSON.stringify(result.errors))
