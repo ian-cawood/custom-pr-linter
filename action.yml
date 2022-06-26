@@ -1,0 +1,13 @@
+name: 'Custom PR Linter'
+description: 'A Pull Request linter that can be customized as needed'
+inputs:
+  title:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
