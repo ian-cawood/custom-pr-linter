@@ -1,4 +1,6 @@
-on: [pull_request]
+on: 
+  pull_request:
+    types: [opened, reopened, edited, labeled]
 
 jobs:
   custom_pr_linter:
