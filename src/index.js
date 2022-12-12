@@ -1,7 +1,7 @@
 const core = require('@actions/core')
 const github = require('@actions/github')
 
-const { preset } = require('./modules/lint')
+const { presets } = require('./modules/lint')
 
 async function run() {
   try {
@@ -12,7 +12,7 @@ async function run() {
     }
     
     console.log(pullRequest.title)
-    const result = await preset.conventional(pullRequest.title)
+    const result = await presets.conventional(pullRequest.title)
     console.log(result)
 
     if (!result.valid) {

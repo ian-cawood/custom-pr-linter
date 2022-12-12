@@ -1,5 +1,5 @@
-const preset = require('./preset')
+const presets = require('./presets')
 
 module.exports = {
-  preset,
+  presets,
 }

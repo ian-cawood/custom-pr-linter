@@ -8,5 +8,5 @@ jobs:
     name: Custom PR linter
     steps:
       - name: Custom PR linter
-        id: hello
+        id: pr-lint
         uses: ian-cawood/custom-pr-linter@v0.0

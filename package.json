@@ -1,19 +1,20 @@
 {
   "name": "custom-pr-linter",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "description": "A Custom Github Actions pr linter",
   "main": "index.js",
   "scripts": {
     "build": "ncc build src/index.js -o dist",
-    "test": "ava"
+    "test": "ava",
+    "release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ian-cawood/custom-pr-linter.git"
+    "url": "https://github.com/ian-cawood/custom-pr-linter.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ian Cawood",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ian-cawood/custom-pr-linter/issues"
   },
@@ -27,6 +28,8 @@
   "devDependencies": {
     "@vercel/ncc": "^0.34.0",
     "ava": "^4.3.0",
-    "esbuild": "^0.14.46"
+    "esbuild": "^0.14.46",
+    "semantic-release": "^19.0.3",
+    "@semantic-release/git": "^10.0.1"
   }
 }

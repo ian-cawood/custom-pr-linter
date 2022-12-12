@@ -41624,16 +41624,16 @@ try {
 /***/ 6876:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-const preset = __nccwpck_require__(3206)
+const presets = __nccwpck_require__(1453)
 
 module.exports = {
-  preset,
+  presets,
 }
 
 
 /***/ }),
 
-/***/ 3206:
+/***/ 1453:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const lint = __nccwpck_require__(9152)
@@ -41848,7 +41848,7 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(2186)
 const github = __nccwpck_require__(5438)
 
-const { preset } = __nccwpck_require__(6876)
+const { presets } = __nccwpck_require__(6876)
 
 async function run() {
   try {
@@ -41859,7 +41859,7 @@ async function run() {
     }
     
     console.log(pullRequest.title)
-    const result = await preset.conventional(pullRequest.title)
+    const result = await presets.conventional(pullRequest.title)
     console.log(result)
 
     if (!result.valid) {

@@ -1,6 +1,6 @@
 const test = require('ava')
 
-const preset = require('./preset')
+const preset = require('./presets')
 
 const testPrefix = 'modules/lint/preset'
 
