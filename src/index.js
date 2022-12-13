@@ -1,7 +1,7 @@
 const core = require('@actions/core')
 const github = require('@actions/github')
 
-const { presets } = require('./modules/lint')
+const { validateTitle } = require('./modules/validate')
 
 async function run() {
   try {
@@ -10,18 +10,14 @@ async function run() {
     if (!pullRequest) {
       throw new Error('Payload does not have a pull request')
     }
-    
-    console.log(pullRequest.title)
-    const result = await presets.conventional(pullRequest.title)
-    console.log(result)
 
-    if (!result.valid) {
-      throw new Error(JSON.stringify(result.errors))
+    const inputs = {
+      preset: core.getInput('lint_preset')
     }
+
+    await validateTitle(pullRequest, inputs)
   }
   catch (error) {
-    console.log(error)
-    console.log(core)
     core.setFailed(error.message)
   }
 }

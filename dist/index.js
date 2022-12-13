@@ -41648,6 +41648,34 @@ module.exports = {
 
 /***/ }),
 
+/***/ 8876:
+/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+const { presets } = __nccwpck_require__(6876)
+
+const validateTitle = async (pullRequest, inputs) => {
+  const lintFunction = presets[inputs.preset]
+
+  if (!lintFunction instanceof Function) {
+    throw new Error('Preset is not defined')
+  }
+  
+  const result = await lintFunction(pullRequest.title)
+
+  if (!result.valid) {
+    throw new Error(JSON.stringify(result.errors))
+  }
+
+  return result
+}
+
+module.exports = {
+  validateTitle,
+}
+
+
+/***/ }),
+
 /***/ 2877:
 /***/ ((module) => {
 
@@ -41848,7 +41876,7 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(2186)
 const github = __nccwpck_require__(5438)
 
-const { presets } = __nccwpck_require__(6876)
+const { validateTitle } = __nccwpck_require__(8876)
 
 async function run() {
   try {
@@ -41857,18 +41885,14 @@ async function run() {
     if (!pullRequest) {
       throw new Error('Payload does not have a pull request')
     }
-    
-    console.log(pullRequest.title)
-    const result = await presets.conventional(pullRequest.title)
-    console.log(result)
 
-    if (!result.valid) {
-      throw new Error(JSON.stringify(result.errors))
+    const inputs = {
+      preset: core.getInput('lint_preset')
     }
+
+    await validateTitle(pullRequest, inputs)
   }
   catch (error) {
-    console.log(error)
-    console.log(core)
     core.setFailed(error.message)
   }
 }
