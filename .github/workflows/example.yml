@@ -10,3 +10,6 @@ jobs:
       - name: Custom PR linter
         id: pr-lint
         uses: ian-cawood/custom-pr-linter@v0.0
+        with:
+          lint_preset: 'invalid'
+
