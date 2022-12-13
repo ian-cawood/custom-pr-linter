@@ -45,5 +45,6 @@ test(`${testPrefix}/prTitle - should throw an error if preset is not defined`, a
 
   // when ... validating the pr title
   // then ... should throw an error
-  await t.throwsAsync(() => validateTitle(pullRequest, inputs))
+  const error = await t.throwsAsync(() => validateTitle(pullRequest, inputs))
+  t.is(error.message, 'Preset is not defined')
 })

@@ -3,7 +3,7 @@ const { presets } = require('../lint')
 const validateTitle = async (pullRequest, inputs) => {
   const lintFunction = presets[inputs.preset]
 
-  if (!lintFunction instanceof Function) {
+  if (typeof lintFunction !== 'function') {
     throw new Error('Preset is not defined')
   }
   
