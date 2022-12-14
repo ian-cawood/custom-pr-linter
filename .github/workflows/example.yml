@@ -1,0 +1,13 @@
+on: 
+  pull_request:
+    types: [opened, reopened, edited, labeled]
+
+jobs:
+  custom_pr_linter:
+    runs-on: ubuntu-22.04
+    name: Custom PR linter
+    steps:
+      - name: Custom PR linter
+        id: pr-lint
+        uses: ian-cawood/custom-pr-linter@v0.0
+

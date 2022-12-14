@@ -1,0 +1,9 @@
+name: 'Custom PR Linter'
+description: 'A Pull Request linter that can be customized as needed'
+inputs:
+  lint_preset:
+    description: 'The lint preset to be used.'
+    default: 'conventional'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
