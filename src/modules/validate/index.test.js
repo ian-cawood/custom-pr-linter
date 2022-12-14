@@ -20,7 +20,7 @@ test(`${testPrefix}/validateTitle - should validate acceptable pr title`, async 
 	t.true(result.valid)
 })
 
-test(`${testPrefix}/validateTitle - should throw an error for invalid pr title`, async t => {
+test(`${testPrefix}/validateTitle - should invalidate an invalid pr title`, async t => {
   // given ... a pull request object and preset input
   const inputs = {
     preset: 'conventional'
@@ -30,8 +30,10 @@ test(`${testPrefix}/validateTitle - should throw an error for invalid pr title`,
   }
 
   // when ... validating the pr title
-  // then ... should throw an error
-  await t.throwsAsync(() => validateTitle(pullRequest, inputs))
+  const result = await validateTitle(pullRequest, inputs)
+
+  // then ... should return a invalid result
+	t.false(result.valid)
 })
 
 test(`${testPrefix}/prTitle - should throw an error if preset is not defined`, async t => {

@@ -9,10 +9,6 @@ const validateTitle = async (pullRequest, inputs) => {
   
   const result = await lintFunction(pullRequest.title)
 
-  if (!result.valid) {
-    throw new Error(JSON.stringify(result.errors))
-  }
-
   return result
 }
 

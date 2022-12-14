@@ -2,17 +2,17 @@ on:
   pull_request:
 
 jobs:
-  pr_linter:
-    runs-on: ubuntu-latest
-    name: PR linter
+  pr_lint:
+    runs-on: ubuntu-22.04
+    name: PR lint
     steps:
       - name: Custom PR linter
         id: pr-lint
         uses: ian-cawood/custom-pr-linter@v0.0
 
   test:
-    runs-on: ubuntu-latest
-    name: test
+    runs-on: ubuntu-22.04
+    name: Test
     steps:
       - name: Checkout
         uses: actions/checkout@v3

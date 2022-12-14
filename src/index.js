@@ -15,7 +15,12 @@ async function run() {
       preset: core.getInput('lint_preset')
     }
 
-    await validateTitle(pullRequest, inputs)
+    const result = await validateTitle(pullRequest, inputs)
+
+    if (!result.valid) {
+      result.errors.foreach(error => core.info(error.message))
+      throw new Error('The title is not valid')
+    }
   }
   catch (error) {
     core.setFailed(error.message)
