@@ -18,7 +18,7 @@ async function run() {
     const result = await validateTitle(pullRequest, inputs)
 
     if (!result.valid) {
-      result.errors.foreach(error => core.info(error.message))
+      result.errors.forEach(error => core.info(error.message))
       throw new Error('The title is not valid')
     }
   }
